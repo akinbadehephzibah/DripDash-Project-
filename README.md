@@ -1,11 +1,11 @@
-# DripDash
+## DripDash
 
 A fashion shop with one immersive feature: AI try-on.
 Built by Flexbox Pod at Webbo3 Academy, Frontend Development.
 
 Deployed by: YOUR NAME HERE
 
-Live site: https://your-username.github.io/dripdash/
+Live site: https://akinbadehephzibah.github.io/dripdash/
 
 ## What it is
 
