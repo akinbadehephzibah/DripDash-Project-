@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- PAGE 13: ACCOUNT. Owner: Role 13, Wallet & Account Developer. Your files: account.html, js/pages/account.js, css/pages/account.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your account | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/account.css">
+</head>
+<body data-page="account">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head row between">
+      <div><p class="eyebrow">Your account</p><h1 id="hello">Hello</h1></div>
+      <button class="btn btn-ghost btn-sm" type="button" id="signOut"><i data-icon="logout"></i> Sign out</button>
+    </div>
+    <div class="account">
+      <nav class="side" aria-label="Account sections">
+        <a href="#details">Details</a><a href="#wallet">Credits</a><a href="#devices">Devices</a><a href="#privacy">Privacy and photos</a>
+      </nav>
+      <div class="stack-lg">
+        <section class="card pad-lg" id="details">
+          <h2>Details</h2>
+          <form class="form" id="detailsForm" novalidate>
+            <div class="two">
+              <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name"></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" disabled></div>
+            <label class="check"><input type="checkbox" name="marketing"> <span>Send me new drops now and then</span></label>
+            <div><button class="btn" type="submit">Save details</button></div>
+          </form>
+          <details class="pw"><summary>Change password</summary>
+            <form class="form" id="passwordForm" novalidate>
+              <div class="two">
+                <div class="field"><label for="current">Current password</label><input id="current" name="current" type="password" autocomplete="current-password"></div>
+                <div class="field"><label for="new">New password</label><input id="new" name="new" type="password" autocomplete="new-password"></div>
+              </div>
+              <div><button class="btn btn-dark" type="submit">Change password</button></div>
+            </form>
+          </details>
+        </section>
+
+        <section class="card pad-lg" id="wallet">
+          <div class="row between"><h2>Credits</h2><span class="balance"><i data-icon="coin"></i><b id="balance">-</b> credits</span></div>
+          <p class="muted" id="walletNote">A still preview is 1 credit, a motion preview 3. A preview that fails gives the credit back.</p>
+          <div class="grid grid-3 packs" id="packs"></div>
+          <h3 style="margin-top:28px">History</h3>
+          <div class="table-wrap"><table class="table"><thead><tr><th>When</th><th>What</th><th style="text-align:right">Credits</th><th style="text-align:right">Balance</th></tr></thead><tbody id="ledger"></tbody></table></div>
+        </section>
+
+        <section class="card pad-lg" id="devices">
+          <h2>Devices</h2>
+          <p class="muted">Where you are signed in. End any session you do not recognise.</p>
+          <ul class="sessions" id="sessions"></ul>
+        </section>
+
+        <section class="card pad-lg" id="privacy">
+          <h2>Privacy and photos</h2>
+          <div id="photoState"></div>
+          <div class="danger-zone">
+            <div><h4>Delete my photo and every preview</h4><p class="small muted">Your try-on profile, your photo and every look made from it. Your orders and credits stay.</p></div>
+            <button class="btn btn-danger btn-sm" type="button" id="deletePhotos">Delete photos</button>
+          </div>
+          <div class="danger-zone">
+            <div><h4>Delete my account</h4><p class="small muted">Everything above, plus your wishlist, bag and sign-in. Order records are kept for tax law, without your name or address.</p></div>
+            <button class="btn btn-danger btn-sm" type="button" id="deleteAccount">Delete account</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/account.js"></script>
+</body>
+</html>

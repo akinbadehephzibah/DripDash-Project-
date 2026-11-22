@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- PAGE 4: BRANDS. Owner: Role 4, Brands & Partners Developer. Your files: brands.html, js/pages/brands.js, css/pages/brands.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brands | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/brands.css">
+</head>
+<body data-page="brands">
+  <header data-dd="header"></header>
+  <main>
+    <div id="view" data-check="brands"></div>
+
+    <section class="section partner" id="partner">
+      <div class="wrap split">
+        <div class="stack-lg">
+          <p class="eyebrow">For brands and retailers</p>
+          <h2>Sell on DripDash</h2>
+          <p class="lead">Put your pieces in front of shoppers who can see them on themselves before they buy. We check every partner and every product photo before anything goes live.</p>
+          <ul class="ticks">
+            <li><i data-icon="check-circle"></i> Your own brand page, your photos, your words</li>
+            <li><i data-icon="check-circle"></i> Try-On for the pieces that pass our quality check</li>
+            <li><i data-icon="check-circle"></i> Sell through DripDash checkout, or link to your own store</li>
+          </ul>
+          <p class="small faint">We never call a brand a partner until we have a signed agreement.</p>
+        </div>
+        <div class="card pad-lg">
+          <form id="partnerForm" class="form" novalidate>
+            <div class="two">
+              <div class="field"><label for="company">Company or brand name</label><input id="company" name="company" autocomplete="organization"></div>
+              <div class="field"><label for="contact_name">Your name</label><input id="contact_name" name="contact_name" autocomplete="name"></div>
+            </div>
+            <div class="two">
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="phone">Phone <span class="faint">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="field"><label for="website">Website <span class="faint">(optional)</span></label><input id="website" name="website" type="url" placeholder="https://"></div>
+            <div class="field"><label for="seller_type">How you sell</label>
+              <select id="seller_type" name="seller_type"><option value="official">We are the brand</option><option value="authorised">Authorised retailer</option><option value="affiliate">Affiliate store</option></select></div>
+            <div class="field"><span class="label">What you sell</span>
+              <div class="options">
+                <label class="option"><input type="checkbox" name="categories" value="tops"><span>Tops</span></label>
+                <label class="option"><input type="checkbox" name="categories" value="outerwear"><span>Outerwear</span></label>
+                <label class="option"><input type="checkbox" name="categories" value="dresses"><span>Dresses</span></label>
+                <label class="option"><input type="checkbox" name="categories" value="bottoms"><span>Bottoms</span></label>
+                <label class="option"><input type="checkbox" name="categories" value="shoes"><span>Shoes</span></label>
+                <label class="option"><input type="checkbox" name="categories" value="accessories"><span>Accessories</span></label>
+              </div></div>
+            <div class="field"><label for="rights">How do you hold the rights to your product photos and logo?</label><textarea id="rights" name="rights" placeholder="For example: we design every piece and shoot our own photos."></textarea></div>
+            <label class="check"><input type="checkbox" name="rights_confirmed"> <span>I confirm we own or may use every photo and brand mark we send.</span></label>
+            <button class="btn btn-block" type="submit">Send our request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/brands.js"></script>
+</body>
+</html>

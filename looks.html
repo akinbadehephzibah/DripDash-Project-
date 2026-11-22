@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- PAGE 8: SAVED LOOKS. Owner: Role 8, Saved Looks Developer. Your files: looks.html, js/pages/looks.js, css/pages/looks.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My looks | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/looks.css">
+</head>
+<body data-page="looks">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head">
+      <nav class="crumbs"><a href="index.html">Home</a><span>/</span><span>My looks</span></nav>
+      <h1>My looks</h1>
+      <p class="lead">Every preview you made. Only you can see them, unless you share one.</p>
+    </div>
+    <div class="row between" style="margin-bottom:22px">
+      <div class="row" id="filters" role="tablist">
+        <button class="chip on" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="static">Stills</button>
+        <button class="chip" type="button" data-filter="motion">Motion</button>
+        <button class="chip" type="button" data-filter="shared">Shared</button>
+      </div>
+      <a class="btn btn-sm" href="tryon.html"><i data-icon="sparkle"></i> New try-on</a>
+    </div>
+    <div class="grid grid-4 looks" id="grid" data-check="looks"></div>
+  </main>
+
+  <dialog class="modal look-modal" id="viewer">
+    <div class="look-view" id="viewerBody"></div>
+  </dialog>
+
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/looks.js"></script>
+</body>
+</html>

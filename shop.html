@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- PAGE 2: SHOP. Owner: Role 2, Catalogue Developer. Your files: shop.html, js/pages/shop.js, css/pages/shop.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/shop.css">
+</head>
+<body data-page="shop">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head">
+      <nav class="crumbs"><a href="index.html">Home</a><span>/</span><span>Shop</span></nav>
+      <h1 id="title">Shop everything</h1>
+      <p class="lead" id="subtitle">Every piece from every brand. Look for the Try-On badge to see it on you.</p>
+    </div>
+
+    <div class="shop">
+      <aside class="filters" id="filters" aria-label="Filters">
+        <form id="filterForm">
+          <div class="field"><label for="fq">Search</label><input id="fq" name="q" type="search" placeholder="Hoodie, adire, blazer..."></div>
+          <label class="check tryon-toggle"><input type="checkbox" name="tryon" value="1"><span><b>Try-On ready only</b><br><span class="small faint">Pieces you can see on yourself</span></span></label>
+          <fieldset><legend>Category</legend><div class="facet" id="fCategory"></div></fieldset>
+          <fieldset><legend>Price (₦)</legend>
+            <div class="two"><div class="field"><input name="min" type="number" min="0" step="500" placeholder="Min" aria-label="Lowest price"></div>
+            <div class="field"><input name="max" type="number" min="0" step="500" placeholder="Max" aria-label="Highest price"></div></div>
+          </fieldset>
+          <fieldset><legend>Colour</legend><div class="facet colours" id="fColour"></div></fieldset>
+          <fieldset><legend>Size</legend><div class="facet sizes" id="fSize"></div></fieldset>
+          <fieldset><legend>Brand</legend><div class="facet" id="fBrand"></div></fieldset>
+          <button class="btn btn-ghost btn-sm btn-block" type="button" id="clear">Clear all filters</button>
+        </form>
+      </aside>
+
+      <section aria-label="Products">
+        <div class="toolbar">
+          <button class="btn btn-dark btn-sm show-filters" type="button" id="showFilters"><i data-icon="filter"></i> Filters</button>
+          <p class="muted small" id="count" aria-live="polite">Loading...</p>
+          <label class="sort"><span class="sr-only">Sort by</span>
+            <select id="sort" class="input">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price_asc">Price: low to high</option>
+              <option value="price_desc">Price: high to low</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid grid-3" id="grid" data-check="shop-grid"></div>
+        <nav class="pager" id="pager" aria-label="Pages"></nav>
+      </section>
+    </div>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/shop.js"></script>
+</body>
+</html>

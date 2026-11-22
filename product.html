@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- PAGE 3: PRODUCT. Owner: Role 3, Product Page Developer. Your files: product.html, js/pages/product.js, css/pages/product.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/product.css">
+</head>
+<body data-page="product">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <nav class="crumbs" id="crumbs" style="margin-top:28px"><a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a></nav>
+    <div id="product" class="pdp" data-check="product">
+      <div class="skeleton" style="aspect-ratio:4/5"></div>
+      <div class="stack"><div class="skeleton" style="height:40px"></div><div class="skeleton" style="height:22px;width:40%"></div></div>
+    </div>
+    <section class="section tight">
+      <h2 style="margin-bottom:22px">You may also like</h2>
+      <div class="grid grid-4" id="related"></div>
+    </section>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/product.js"></script>
+</body>
+</html>

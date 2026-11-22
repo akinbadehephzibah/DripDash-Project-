@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- PAGE 14: ADMIN. Owner: Role 14, Admin Dashboard Developer. Your files: admin.html, js/pages/admin.js, css/pages/admin.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DripDash Admin</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/admin.css">
+</head>
+<body data-page="admin">
+  <header class="admin-bar">
+    <div class="wrap row between">
+      <a class="brand" href="index.html"><img src="assets/emblem-96.png" alt=""><span>Drip<b>Dash</b></span> <span class="pill">Admin</span></a>
+      <div class="row"><span class="small muted" id="who"></span><button class="btn btn-ghost btn-sm" type="button" id="staffOut" hidden>Sign out</button></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="gate" id="gate" hidden>
+      <form class="card pad-lg form" id="staffForm" novalidate>
+        <h1 class="display" style="font-size:2rem">Staff sign-in</h1>
+        <div class="field"><label for="se">Email</label><input id="se" name="email" type="email" autocomplete="username"></div>
+        <div class="field"><label for="sp">Password</label><input id="sp" name="password" type="password" autocomplete="current-password"></div>
+        <button class="btn btn-block" type="submit">Sign in</button>
+        <div class="demo-logins small">
+          <p class="faint">Pilot logins:</p>
+          <button type="button" class="chip" data-login="admin@dripdash.ng|dripdash-admin">Admin</button>
+          <button type="button" class="chip" data-login="support@dripdash.ng|dripdash-support">Support</button>
+          <button type="button" class="chip" data-login="catalogue@dripdash.ng|dripdash-catalogue">Catalogue</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="dash" hidden>
+      <div class="tabs" id="tabs">
+        <button class="on" type="button" data-tab="overview">Overview</button>
+        <button type="button" data-tab="reports">Reports <span class="count" id="reportCount"></span></button>
+        <button type="button" data-tab="tryon">Try-on control</button>
+        <button type="button" data-tab="orders">Orders</button>
+        <button type="button" data-tab="jobs">Job queue</button>
+        <button type="button" data-tab="partners">Partners</button>
+        <button type="button" data-tab="audit">Audit log</button>
+      </div>
+
+      <div data-pane="overview">
+        <div class="row between" style="margin-bottom:18px"><h2>Pilot scoreboard</h2>
+          <select class="input" id="days" style="width:auto"><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option></select></div>
+        <div class="grid grid-4" id="tiles" data-check="admin-tiles"></div>
+        <div class="grid grid-2" style="margin-top:20px">
+          <div class="card pad"><h3>Previews and orders, by day</h3><div class="bars" id="daily"></div></div>
+          <div class="card pad"><h3>Most tried on</h3><ol class="top" id="top"></ol></div>
+        </div>
+      </div>
+      <div data-pane="reports" hidden><div class="reports" id="reports"></div></div>
+      <div data-pane="tryon" hidden>
+        <div class="card pad switches" id="switches"></div>
+        <h3 style="margin:26px 0 12px">Every product</h3>
+        <div class="table-wrap"><table class="table"><thead><tr><th>Product</th><th>Category</th><th>Stock</th><th>Last checked</th><th>Try-on</th></tr></thead><tbody id="productRows"></tbody></table></div>
+      </div>
+      <div data-pane="orders" hidden><div class="table-wrap"><table class="table"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Move to</th></tr></thead><tbody id="orderRows"></tbody></table></div></div>
+      <div data-pane="jobs" hidden><p class="small faint" id="jobsNote"></p><div class="table-wrap"><table class="table"><thead><tr><th>Job</th><th>Product</th><th>Mode</th><th>Status</th><th>Provider</th><th>Time</th><th>Credits</th></tr></thead><tbody id="jobRows"></tbody></table></div></div>
+      <div data-pane="partners" hidden><div class="stack" id="partners"></div></div>
+      <div data-pane="audit" hidden><div class="table-wrap"><table class="table"><thead><tr><th>When</th><th>Who</th><th>Did</th><th>On</th><th>Note</th></tr></thead><tbody id="auditRows"></tbody></table></div></div>
+    </section>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/admin.js"></script>
+</body>
+</html>

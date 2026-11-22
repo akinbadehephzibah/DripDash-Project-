@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- PAGE 7: TRY-ON STUDIO. Owner: Role 7, Try-On Studio Developer. Your files: tryon.html, js/pages/tryon.js, css/pages/tryon.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Try-On studio | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/tryon.css">
+</head>
+<body data-page="tryon">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head studio-head">
+      <div>
+        <p class="eyebrow">Try-On studio</p>
+        <h1 id="title">See it on you</h1>
+      </div>
+      <a class="credit-chip" href="account.html#wallet" id="balance"><i data-icon="coin"></i><span>-</span> credits</a>
+    </div>
+
+    <div id="picker" hidden>
+      <p class="lead" style="margin-bottom:24px">Pick a piece to try on. Only pieces that passed our quality check show here.</p>
+      <div class="grid grid-4" id="pickGrid"></div>
+    </div>
+
+    <div class="studio" id="studio" hidden>
+      <section class="stage" aria-live="polite">
+        <div class="stage-frame" id="stage">
+          <img id="stageImg" alt="">
+          <div class="stage-wait" id="wait" hidden>
+            <div class="scan"></div>
+            <p class="wait-step" id="waitStep">Waiting in line</p>
+            <div class="progress"><span id="waitBar" style="width:5%"></span></div>
+          </div>
+        </div>
+        <div id="resultBar"></div>
+      </section>
+
+      <aside class="controls">
+        <a class="item" id="item"></a>
+        <div class="field"><span class="label">Colour</span><div class="options" id="colours"></div></div>
+        <fieldset class="modes" id="modes">
+          <legend class="label">Preview</legend>
+          <label class="mode"><input type="radio" name="mode" value="static" checked><span><b>Still preview</b><small>One picture of you wearing it. Under a minute.</small><em>1 credit</em></span></label>
+          <label class="mode"><input type="radio" name="mode" value="motion"><span><b>Motion preview <i class="pill info">Beta</i></b><small>A short loop, made from your still preview.</small><em>3 credits</em></span></label>
+        </fieldset>
+        <div id="quote"></div>
+        <button class="btn btn-lg btn-block" type="button" id="startBtn" disabled><i data-icon="sparkle"></i> Make my preview</button>
+        <p class="ai-label"><i data-icon="info"></i><span id="disclaimer">AI-assisted preview. It shows how the item may look on you. It is not a guarantee of fit, fabric or colour.</span></p>
+      </aside>
+    </div>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/tryon.js"></script>
+</body>
+</html>

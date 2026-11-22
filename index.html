@@ -1,0 +1,102 @@
+<!doctype html>
+<!-- PAGE 1: HOME. Owner: Role 1, Lead Developer. Your files: index.html, js/pages/home.js, css/pages/home.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DripDash | Stay fresh. We'll dash.</title>
+  <meta name="description" content="Discover fashion from Lagos brands, see it on yourself with an AI try-on, and buy in one place.">
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body data-page="home">
+  <header data-dd="header"></header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Fashion discovery with AI try-on</p>
+          <h1>See it on you<br><span class="grad-text">before you buy it.</span></h1>
+          <p class="lead">Shop Lagos brands in one place. Add one photo, and DripDash shows you wearing the piece in under a minute. Stay fresh. We'll dash.</p>
+          <div class="row hero-cta">
+            <a class="btn btn-lg" href="shop.html">Shop the drop <i data-icon="arrow"></i></a>
+            <a class="btn btn-lg btn-ghost" href="tryon.html"><i data-icon="sparkle"></i> Try it on</a>
+          </div>
+          <dl class="hero-stats" id="stats" aria-live="polite">
+            <div><dt>Products</dt><dd data-stat="products">-</dd></div>
+            <div><dt>Brands</dt><dd data-stat="brands">-</dd></div>
+            <div><dt>Previews made</dt><dd data-stat="previews_made">-</dd></div>
+          </dl>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="hero-emblem" src="assets/emblem.webp" alt="">
+          <figure class="hero-card">
+            <img src="assets/hero-tryon.webp" alt="">
+            <figcaption><span class="pill tryon"><i data-icon="sparkle"></i>Try-On preview</span><span class="small">Volt Heavyweight Tee</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="row between section-head">
+          <h2>Shop by category</h2>
+          <a class="link-arrow" href="shop.html">Everything <i data-icon="arrow"></i></a>
+        </div>
+        <div class="cats" id="categories"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="row between section-head">
+          <div><p class="eyebrow">This week</p><h2>Featured drops</h2></div>
+          <a class="link-arrow" href="shop.html?sort=featured">See all <i data-icon="arrow"></i></a>
+        </div>
+        <div class="grid grid-4" id="featured" data-check="featured"></div>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="wrap">
+        <p class="eyebrow">Try-On</p>
+        <h2>How try-on works</h2>
+        <ol class="how-steps">
+          <li><span class="num">1</span><h3>Add one photo</h3><p class="muted">Stand straight with your whole body in the frame and good, even light. It stays private.</p></li>
+          <li><span class="num">2</span><h3>Pick a piece</h3><p class="muted">Anything with the Try-On badge: tops, jackets and dresses from every brand.</p></li>
+          <li><span class="num">3</span><h3>See it on you</h3><p class="muted">A preview in under a minute. Your first 3 are free, then 1 credit each.</p></li>
+        </ol>
+        <a class="btn" href="profile.html">Set up my try-on</a>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="brand-strip" id="brands"></div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="honest">
+          <div class="icon-tile"><i data-icon="shield"></i></div>
+          <div class="stack">
+            <h3>An honest preview, a private photo</h3>
+            <p class="muted">A try-on is a picture that helps you imagine the look. It is not a fitting, so every product has its size guide and our 7-day returns. Your photo is only ever seen by you, and you can delete it any time.</p>
+          </div>
+          <a class="btn btn-ghost" href="account.html#privacy">Privacy and photos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

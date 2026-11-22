@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- PAGE 11: CHECKOUT. Owner: Role 11, Checkout Developer. Your files: checkout.html, js/pages/checkout.js, css/pages/checkout.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/checkout.css">
+</head>
+<body data-page="checkout">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head">
+      <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="bag.html">Bag</a><span>/</span><span>Checkout</span></nav>
+      <h1>Checkout</h1>
+    </div>
+    <div class="checkout" id="checkout" data-check="checkout">
+      <form class="form card pad-lg" id="orderForm" novalidate>
+        <h3>Delivery</h3>
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="0803 123 4567"></div>
+        <div class="field"><label for="address">Address</label><textarea id="address" name="address" autocomplete="street-address" placeholder="House number, street, area"></textarea></div>
+        <div class="field"><label for="area">Area</label><select id="area" name="area"><option value="">Choose where we deliver</option></select></div>
+        <div class="field"><label for="note">Note for the rider <span class="faint">(optional)</span></label><input id="note" name="note" placeholder="Gate code, landmark..."></div>
+        <h3 style="margin-top:10px">Payment</h3>
+        <div class="pay-options" id="methods"></div>
+        <p class="notice warn small" id="pilotNote"></p>
+        <p class="small muted paid-to"><i data-icon="lock"></i> You pay <b>DripDash</b>. We never see or keep your card details.</p>
+        <button class="btn btn-lg btn-block" type="submit" id="payBtn">Place order</button>
+      </form>
+      <aside class="card pad summary" id="summary"></aside>
+    </div>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/checkout.js"></script>
+</body>
+</html>

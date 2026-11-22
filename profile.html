@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- PAGE 6: TRY-ON PROFILE. Owner: Role 6, Try-On Profile Developer. Your files: profile.html, js/pages/profile.js, css/pages/profile.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My try-on profile | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/profile.css">
+</head>
+<body data-page="profile">
+  <header data-dd="header"></header>
+  <main class="wrap">
+    <div class="page-head">
+      <nav class="crumbs"><a href="index.html">Home</a><span>/</span><span>Try-on profile</span></nav>
+      <h1>Your try-on profile</h1>
+      <p class="lead">One photo and four marks. Set it up once, then try on anything with the Try-On badge.</p>
+    </div>
+
+    <ol class="stepper" id="stepper" aria-label="Setup steps">
+      <li data-step="consent"><span>1</span>Your consent</li>
+      <li data-step="photo"><span>2</span>Your photo</li>
+      <li data-step="fit"><span>3</span>Body marks</li>
+      <li data-step="ready"><span>4</span>Ready</li>
+    </ol>
+
+    <section class="panel-step" data-panel="consent" hidden>
+      <div class="split">
+        <div class="card pad-lg stack-lg">
+          <h2 id="consentTitle">Before you add your photo</h2>
+          <ul class="points" id="consentPoints"></ul>
+        </div>
+        <form class="card pad-lg form" id="consentForm" novalidate>
+          <div class="icon-tile"><i data-icon="shield"></i></div>
+          <h3>Your photo, your choice</h3>
+          <label class="check"><input type="checkbox" name="agree"> <span>I have read this and I agree to DripDash using my photo for the try-on previews I ask for.</span></label>
+          <label class="check"><input type="checkbox" name="adult"> <span>I am 18 or older, and the photo I add will be of me.</span></label>
+          <button class="btn btn-block" type="submit">Agree and continue</button>
+          <p class="small faint">You can delete your photo and every preview from your account at any time.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="panel-step" data-panel="photo" hidden>
+      <div class="split">
+        <div class="stack-lg">
+          <label class="drop" id="drop" for="photoInput">
+            <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" class="sr-only">
+            <img id="photoPreview" alt="Your photo" hidden>
+            <span class="drop-empty" id="dropEmpty"><i data-icon="camera"></i><b>Take or choose a photo</b><span class="small faint">JPEG, PNG or WebP, whole body, standing</span></span>
+          </label>
+          <div class="row">
+            <button class="btn" type="button" id="uploadBtn" disabled>Use this photo</button>
+            <label class="btn btn-ghost" for="photoInput">Choose another</label>
+          </div>
+          <div id="checks" aria-live="polite"></div>
+        </div>
+        <div class="card pad-lg stack">
+          <h3>For the best preview</h3>
+          <ul class="guide" id="guide"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-step" data-panel="fit" hidden>
+      <div class="split">
+        <div class="fit-stage" id="fitStage">
+          <img id="fitPhoto" alt="Your photo with the body marks">
+          <button class="mark point" type="button" data-mark="shoulder_l" aria-label="Left shoulder"><span>L</span></button>
+          <button class="mark point" type="button" data-mark="shoulder_r" aria-label="Right shoulder"><span>R</span></button>
+          <button class="mark line" type="button" data-mark="hip_y" aria-label="Hip line"><span>Hips</span></button>
+          <button class="mark line" type="button" data-mark="ankle_y" aria-label="Ankle line"><span>Ankles</span></button>
+        </div>
+        <div class="card pad-lg stack-lg">
+          <h3>Drag the marks onto your body</h3>
+          <ol class="fit-help">
+            <li><b>L</b> and <b>R</b> go on the tips of your shoulders.</li>
+            <li>The <b>Hips</b> line goes across the widest part of your hips.</li>
+            <li>The <b>Ankles</b> line goes across your ankles.</li>
+          </ol>
+          <p class="small faint">We use these marks to place clothes on your photo. They never leave DripDash.</p>
+          <div class="row">
+            <button class="btn" type="button" id="saveFit">Save and finish</button>
+            <button class="btn btn-ghost" type="button" id="resetFit">Reset the marks</button>
+          </div>
+          <div id="fitMsg"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-step" data-panel="ready" hidden>
+      <div class="split">
+        <div class="ready-photo"><img id="readyPhoto" alt="Your try-on photo"></div>
+        <div class="card pad-lg stack-lg">
+          <span class="pill green"><i data-icon="check"></i>Profile ready</span>
+          <h2>You are ready to try things on</h2>
+          <p class="muted" id="readyText"></p>
+          <div class="row">
+            <a class="btn" href="shop.html?tryon=1"><i data-icon="sparkle"></i> Find something to try</a>
+            <button class="btn btn-ghost" type="button" id="replaceBtn">Replace my photo</button>
+          </div>
+          <hr class="divider">
+          <button class="btn btn-danger btn-sm" type="button" id="deleteBtn"><i data-icon="trash"></i> Delete my photo and every preview</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-dd="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/profile.js"></script>
+</body>
+</html>

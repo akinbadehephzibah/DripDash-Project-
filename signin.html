@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- PAGE 5: SIGN IN. Owner: Role 5, Accounts Developer. Your files: signin.html, js/pages/signin.js, css/pages/signin.css -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in | DripDash</title>
+  <link rel="icon" href="assets/emblem-96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:ital,wght@0,700;0,800;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="css/dripdash.css">
+  <link rel="stylesheet" href="css/pages/signin.css">
+</head>
+<body data-page="signin">
+  <header data-dd="header"></header>
+  <main class="auth">
+    <div class="auth-art" aria-hidden="true">
+      <img src="assets/emblem.webp" alt="">
+      <p class="display">Stay fresh.<br><span class="volt">We'll dash.</span></p>
+    </div>
+    <div class="auth-box">
+      <div id="why"></div>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="on" data-tab="signin" aria-selected="true">Sign in</button>
+        <button type="button" role="tab" data-tab="register" aria-selected="false">Create account</button>
+      </div>
+
+      <form id="signinForm" class="form" data-panel="signin" novalidate>
+        <h1 class="auth-title">Welcome back</h1>
+        <div class="field"><label for="si-email">Email</label><input id="si-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="si-password">Password</label><input id="si-password" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn-block btn-lg" type="submit">Sign in</button>
+        <button class="btn btn-block btn-ghost" type="button" id="demoBtn"><i data-icon="sparkle"></i> Use the demo shopper</button>
+        <p class="small faint">The demo shopper already has a try-on profile, so you can try things on straight away.</p>
+      </form>
+
+      <form id="registerForm" class="form" data-panel="register" hidden novalidate>
+        <h1 class="auth-title">Create your account</h1>
+        <div class="field"><label for="re-name">Full name</label><input id="re-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="re-email">Email</label><input id="re-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="re-password">Password</label><input id="re-password" name="password" type="password" autocomplete="new-password" required><p class="hint">At least 8 characters.</p></div>
+        <div class="field"><label for="re-phone">Phone <span class="faint">(optional)</span></label><input id="re-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <label class="check"><input type="checkbox" name="adult"> <span>I am 18 or older (needed for try-on)</span></label>
+        <label class="check"><input type="checkbox" name="terms"> <span>I agree to the terms and the privacy notice</span></label>
+        <label class="check"><input type="checkbox" name="marketing"> <span>Send me new drops now and then (optional)</span></label>
+        <button class="btn btn-block btn-lg" type="submit">Create account</button>
+        <p class="small faint">You get 3 free try-on previews.</p>
+      </form>
+    </div>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/signin.js"></script>
+</body>
+</html>
