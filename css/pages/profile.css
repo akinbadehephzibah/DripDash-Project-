@@ -1,0 +1,38 @@
+/* TRY-ON PROFILE PAGE styles (Role 6, Try-On Profile Developer) */
+.stepper { list-style: none; padding: 0; margin: 0 0 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; counter-reset: s; }
+.stepper li { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); color: var(--faint); font-weight: 600; font-size: .9rem; }
+.stepper li span { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); font-weight: 800; font-size: .85rem; flex: none; }
+.stepper li.on { color: var(--text); border-color: rgba(195, 249, 42, .5); background: var(--volt-soft); }
+.stepper li.on span { background: var(--volt); color: var(--black); }
+.stepper li.done { color: var(--muted); }
+.stepper li.done span { background: var(--deep); color: var(--white); }
+@media (max-width: 700px) { .stepper { grid-template-columns: repeat(2, 1fr); } }
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.points li { display: flex; gap: 12px; color: var(--muted); }
+.points svg { width: 20px; height: 20px; color: var(--volt); flex: none; margin-top: 2px; }
+.drop { display: grid; place-items: center; aspect-ratio: 3 / 4; max-height: 560px; border: 2px dashed var(--line-2); border-radius: 20px; background: var(--graphite); cursor: pointer; overflow: hidden; transition: border-color .15s; }
+.drop:hover { border-color: var(--volt); }
+.drop img { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.drop-empty { display: grid; justify-items: center; gap: 8px; text-align: center; padding: 20px; }
+.drop-empty svg { width: 40px; height: 40px; color: var(--volt); }
+.guide { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.guide li { display: grid; gap: 2px; padding-left: 14px; border-left: 2px solid var(--volt); }
+.checks-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.check-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 10px 14px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); }
+.check-row svg { width: 18px; height: 18px; flex: none; }
+.check-row.pass svg { color: var(--dash); }
+.check-row.warn { border-color: rgba(255, 181, 71, .35); }
+.check-row.warn svg { color: var(--warn); }
+.check-row.fail { border-color: rgba(255, 99, 99, .4); background: rgba(255, 99, 99, .06); }
+.check-row.fail svg { color: var(--danger); }
+.check-row .small { width: 100%; padding-left: 28px; color: var(--muted); }
+.fit-stage { position: relative; border-radius: 20px; overflow: hidden; background: #000; touch-action: none; user-select: none; max-width: 480px; }
+.fit-stage img { width: 100%; display: block; pointer-events: none; }
+.mark { position: absolute; border: 0; padding: 0; cursor: grab; touch-action: none; }
+.mark.point { width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: var(--volt); color: var(--black); font-weight: 900; box-shadow: 0 0 0 4px rgba(7, 7, 7, .6), 0 0 18px rgba(195, 249, 42, .7); }
+.mark.line { left: 0; right: 0; height: 30px; margin-top: -15px; background: transparent; }
+.mark.line::before { content: ""; position: absolute; left: 0; right: 0; top: 14px; border-top: 2px dashed var(--volt); }
+.mark.line span { position: absolute; right: 10px; top: 2px; background: var(--volt); color: var(--black); font-size: .72rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; }
+.mark:active { cursor: grabbing; }
+.fit-help { margin: 0; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); }
+.ready-photo { border-radius: 20px; overflow: hidden; max-width: 420px; background: #000; }

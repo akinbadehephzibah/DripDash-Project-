@@ -1,0 +1,28 @@
+/* ACCOUNT styles (Role 13, Wallet & Account Developer) */
+.account { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 32px; align-items: start; padding-bottom: 40px; }
+.side { position: sticky; top: 90px; display: grid; gap: 4px; }
+.side a { padding: 10px 14px; border-radius: 10px; color: var(--muted); font-weight: 600; }
+.side a:hover { background: var(--surface); color: var(--text); }
+.account section { scroll-margin-top: 90px; }
+.account h2 { margin-bottom: 16px; }
+.pw { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 16px; }
+.pw summary { cursor: pointer; font-weight: 600; margin-bottom: 14px; }
+.balance { display: inline-flex; align-items: center; gap: 8px; color: var(--volt); font-weight: 700; }
+.balance svg { width: 22px; height: 22px; }
+.balance b { font-family: var(--display); font-style: italic; font-size: 2rem; }
+.packs { margin-top: 20px; }
+.pack { display: grid; gap: 6px; justify-items: start; position: relative; }
+.pack.popular { border-color: rgba(195, 249, 42, .5); background: linear-gradient(180deg, var(--volt-soft), transparent 60%), var(--surface); }
+.pack-credits { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.6rem; }
+.pack .btn { margin-top: 8px; }
+.amount { text-align: right; font-weight: 700; }
+.amount.plus { color: var(--dash); }
+.amount.minus { color: var(--muted); }
+.sessions { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+.sessions li { display: flex; align-items: center; gap: 14px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; }
+.sessions .icon-tile { width: 40px; height: 40px; }
+.sessions .who { display: grid; flex: 1; }
+.photo-state { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.photo-state img { width: 80px; height: 106px; object-fit: cover; border-radius: 10px; background: #000; }
+.danger-zone { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 16px 0; border-top: 1px solid var(--line); }
+@media (max-width: 860px) { .account { grid-template-columns: 1fr; } .side { position: static; display: flex; overflow-x: auto; } .danger-zone { flex-direction: column; align-items: flex-start; } }

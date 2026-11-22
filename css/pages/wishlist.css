@@ -1,0 +1,6 @@
+/* WISHLIST styles (Role 9, Wishlist Developer) */
+.wish { display: flex; flex-direction: column; gap: 12px; }
+.wish-actions { display: flex; gap: 8px; align-items: center; }
+.wish-actions .btn { flex: 1; }
+.toast .undo { margin-left: 14px; background: var(--black); color: var(--volt); border: 0; border-radius: 999px; padding: 6px 12px; font-weight: 700; cursor: pointer; pointer-events: auto; }
+.toast.on { pointer-events: auto; }

@@ -1,0 +1,13 @@
+/* SIGN IN PAGE styles (Role 5, Accounts Developer) */
+.auth { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 71px); }
+.auth-art { position: relative; display: grid; place-items: center; align-content: center; gap: 28px; padding: 40px; background: radial-gradient(circle at 50% 40%, rgba(195, 249, 42, .12), transparent 60%), var(--graphite); border-right: 1px solid var(--line); overflow: hidden; }
+.auth-art img { width: min(380px, 80%); filter: drop-shadow(0 0 50px rgba(195, 249, 42, .25)); }
+.auth-art .display { font-size: clamp(2rem, 4vw, 3.2rem); text-align: center; line-height: 1.05; }
+.auth-box { width: 100%; max-width: 460px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 6px; }
+.auth-title { font-size: 2.2rem; margin-bottom: 8px; }
+#why:not(:empty) { margin-bottom: 18px; }
+@media (max-width: 860px) {
+  .auth { grid-template-columns: 1fr; }
+  .auth-art { display: none; }
+  .auth-box { padding-top: 32px; }
+}

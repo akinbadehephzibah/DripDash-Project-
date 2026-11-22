@@ -1,0 +1,33 @@
+/* BAG styles (Role 10, Bag Developer) */
+.bag { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 32px; align-items: start; padding-bottom: 40px; }
+.bag.is-empty { grid-template-columns: 1fr; }
+#notices { grid-column: 1 / -1; display: grid; gap: 10px; }
+#notices:empty { display: none; }
+.lines { display: grid; gap: 12px; }
+.line { display: grid; grid-template-columns: 92px minmax(0, 1fr) auto auto auto; gap: 18px; align-items: center; padding: 14px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.line.has-problem { border-color: rgba(255, 99, 99, .4); }
+.line-img { border-radius: 12px; overflow: hidden; background: var(--paper); aspect-ratio: 4 / 5; }
+.line-img img { width: 100%; height: 100%; object-fit: cover; }
+.line-info { display: grid; gap: 3px; }
+.line-name { font-weight: 600; }
+.line-name:hover { color: var(--volt); }
+.line-info .notice { margin-top: 6px; padding: 8px 10px; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line-2); border-radius: 999px; height: 40px; }
+.qty button { width: 38px; height: 38px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; border-radius: 50%; }
+.qty button:hover:not(:disabled) { background: var(--surface-2); }
+.qty button:disabled { opacity: .3; cursor: not-allowed; }
+.qty button svg { width: 16px; height: 16px; }
+.qty span { min-width: 26px; text-align: center; font-weight: 700; }
+.line-total { min-width: 88px; text-align: right; }
+.summary { display: grid; gap: 14px; position: sticky; top: 90px; }
+.sum-row { display: flex; justify-content: space-between; gap: 12px; }
+.free { display: grid; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.free svg, .summary .faint svg { width: 15px; height: 15px; vertical-align: -2px; }
+@media (max-width: 900px) {
+  .bag { grid-template-columns: 1fr; }
+  .summary { position: static; }
+  .line { grid-template-columns: 76px minmax(0, 1fr) auto; }
+  .line .qty { grid-column: 2; }
+  .line-total { grid-column: 3; grid-row: 2; }
+  .line [data-remove] { grid-column: 3; grid-row: 1; justify-self: end; }
+}

@@ -1,0 +1,34 @@
+/* SHOP PAGE styles (Role 2, Catalogue Developer) */
+.shop { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 36px; align-items: start; padding-bottom: 40px; }
+.filters { position: sticky; top: 90px; max-height: calc(100vh - 110px); overflow-y: auto; padding-right: 6px; }
+.filters form { display: grid; gap: 22px; }
+.filters fieldset { border: 0; padding: 0; margin: 0; }
+.filters legend { font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
+.tryon-toggle { padding: 14px; border-radius: 12px; border: 1px solid rgba(195, 249, 42, .3); background: var(--volt-soft); color: var(--text); }
+.facet { display: grid; gap: 4px; }
+.facet-item { display: flex; align-items: center; gap: 10px; padding: 6px 4px; border-radius: 8px; cursor: pointer; font-size: .92rem; }
+.facet-item:hover { background: var(--surface); }
+.facet-item input { width: 17px; height: 17px; accent-color: var(--volt); margin: 0; }
+.facet-item .count { margin-left: auto; color: var(--faint); font-size: .8rem; }
+.facet-item.none { opacity: .45; }
+.facet-item .swatch { width: 16px; height: 16px; border-width: 1px; }
+.facet.sizes { display: flex; flex-wrap: wrap; gap: 6px; }
+.facet-item.pillbox { padding: 0; position: relative; }
+.facet-item.pillbox input { position: absolute; opacity: 0; inset: 0; }
+.facet-item.pillbox span { display: inline-grid; place-items: center; min-width: 44px; height: 36px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 10px; font-weight: 600; font-size: .84rem; }
+.facet-item.pillbox input:checked + span { background: var(--text); color: var(--black); border-color: var(--text); }
+.facet-item.pillbox .count { display: none; }
+.toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.toolbar .sort { margin-left: auto; }
+.toolbar select { height: 42px; width: auto; padding: 0 40px 0 14px; border-radius: 999px; appearance: none;
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23A3A3A8' stroke-width='1.8'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 14px center; border: 1px solid var(--line); color: var(--text); }
+.show-filters { display: none; }
+.pager { display: flex; gap: 8px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+.pager .chip { min-width: 42px; justify-content: center; }
+@media (max-width: 900px) {
+  .shop { grid-template-columns: 1fr; }
+  .show-filters { display: inline-flex; }
+  .filters { display: none; position: static; max-height: none; background: var(--graphite); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+  .filters.open { display: block; }
+  .shop .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

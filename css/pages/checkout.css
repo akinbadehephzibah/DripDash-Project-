@@ -1,0 +1,17 @@
+/* CHECKOUT styles (Role 11, Checkout Developer) */
+.checkout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 32px; align-items: start; padding-bottom: 40px; }
+.pay-options { display: grid; gap: 8px; }
+.pay { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line-2); cursor: pointer; }
+.pay input { accent-color: var(--volt); width: 18px; height: 18px; margin: 0; }
+.pay:has(input:checked) { border-color: var(--volt); background: var(--volt-soft); }
+.paid-to svg { width: 15px; height: 15px; vertical-align: -2px; }
+.summary { display: grid; gap: 12px; position: sticky; top: 90px; }
+.mini { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 12px; }
+.mini li { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; }
+.mini img { width: 48px; height: 60px; object-fit: cover; border-radius: 8px; background: var(--paper); }
+.mini li > span:nth-child(2) { display: grid; }
+.sum-row { display: flex; justify-content: space-between; gap: 12px; }
+.sum-row.total { padding-top: 12px; border-top: 1px solid var(--line); font-size: 1.15rem; font-weight: 700; }
+.done { max-width: 640px; margin: 0 auto 40px; display: grid; gap: 14px; justify-items: start; }
+.done .ref { font-family: var(--display); font-style: italic; font-weight: 900; font-size: 2.4rem; color: var(--volt); letter-spacing: -.02em; }
+@media (max-width: 900px) { .checkout { grid-template-columns: 1fr; } .summary { position: static; order: -1; } }

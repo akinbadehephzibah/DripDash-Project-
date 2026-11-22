@@ -1,0 +1,24 @@
+/* ORDERS styles (Role 12, Orders Developer) */
+.order-list { display: grid; gap: 12px; padding-bottom: 40px; }
+.order-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 20px; align-items: center; padding: 14px 18px; }
+.order-row .thumbs { display: flex; }
+.order-row .thumbs img { width: 46px; height: 58px; object-fit: cover; border-radius: 8px; background: var(--paper); border: 2px solid var(--surface); margin-left: -12px; }
+.order-row .thumbs img:first-child { margin-left: 0; }
+.order-id { display: grid; }
+.order-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; align-items: start; padding-bottom: 40px; }
+.tracker { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.tracker::before { content: ""; position: absolute; left: 10%; right: 10%; top: 9px; height: 2px; background: var(--line-2); }
+.tracker li { display: grid; justify-items: center; gap: 10px; text-align: center; font-size: .82rem; color: var(--faint); position: relative; }
+.tracker .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--surface-2); border: 2px solid var(--line-2); }
+.tracker li.done { color: var(--text); }
+.tracker li.done .dot { background: var(--volt); border-color: var(--volt); box-shadow: 0 0 0 5px var(--volt-soft); }
+.timeline { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 14px; border-left: 2px solid var(--line); padding-left: 16px; }
+.timeline li { display: grid; gap: 2px; }
+.mini { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.mini li { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; }
+.mini img { width: 48px; height: 60px; object-fit: cover; border-radius: 8px; background: var(--paper); }
+.mini li > span:nth-child(2) { display: grid; }
+.sum-row { display: flex; justify-content: space-between; }
+.sum-row.total { font-weight: 700; padding-top: 10px; border-top: 1px solid var(--line); }
+#orderActions { display: grid; gap: 8px; }
+@media (max-width: 900px) { .order-grid { grid-template-columns: 1fr; } .order-row { grid-template-columns: auto 1fr; } .tracker { font-size: .7rem; } }
